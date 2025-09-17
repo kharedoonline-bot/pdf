@@ -1,534 +1,805 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7238167963236995"
-     crossorigin="anonymous"></script>
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7238167963236995"
+     crossorigin="anonymous"></script> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online tool to convert images to PDF with customizable page settings. No registration required.">
-    <meta name="keywords" content="image to pdf, jpg to pdf, png to pdf, online converter, free tool">
-    <title>ImageToPDF Converter - Free Online Tool</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Image to PDF Converter | Free Online Tool with Advanced Options</title>
+    <meta name="description" content="Convert images to PDF online for free. Advanced features like page layout, borders, compression, and more. No registration required.">
+    <meta name="keywords" content="image to pdf, jpg to pdf, png to pdf, online converter, free pdf tool">
+    <meta name="author" content="Your Name">
+    <!-- Canonical URL to avoid duplicate content -->
+    <link rel="canonical" href="https://yourdomain.com/image-to-pdf">
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Image to PDF Converter | Free Online Tool">
+    <meta property="og:description" content="Convert images to PDF online with advanced features like page layout, borders, and compression.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/image-to-pdf">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Image to PDF Converter | Free Online Tool">
+    <meta name="twitter:description" content="Convert images to PDF online with advanced features.">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
     <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --accent-color: #f72585;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #4cc9f0;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #f5f7fa;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            color: var(--dark-color);
+            background-color: #f5f7ff;
             padding: 20px;
         }
 
         header {
             text-align: center;
-            padding: 30px 0;
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            color: white;
-            border-radius: 10px;
             margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
 
-        header h1 {
-            font-size: 2.5rem;
+        h1 {
+            color: var(--primary-color);
             margin-bottom: 10px;
         }
 
-        header p {
-            font-size: 1.1rem;
+        .description {
+            color: #666;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .main-content {
-            display: flex;
-            flex-wrap: wrap;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
 
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .upload-section {
-            flex: 1;
-            min-width: 300px;
             background: white;
             padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
 
-        .settings-section {
-            flex: 1;
-            min-width: 300px;
+        .options-section {
             background: white;
             padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
 
-        .preview-section {
-            flex: 100%;
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        h2 {
-            font-size: 1.5rem;
+        .section-title {
+            color: var(--secondary-color);
             margin-bottom: 20px;
-            color: #2c3e50;
-            border-bottom: 2px solid #eee;
             padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
         }
 
         .drop-area {
-            border: 3px dashed #6a11cb;
-            border-radius: 10px;
-            padding: 40px 20px;
+            border: 2px dashed #ccc;
+            border-radius: var(--border-radius);
+            padding: 30px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: var(--transition);
             margin-bottom: 20px;
         }
 
-        .drop-area:hover {
-            background-color: #f8f9fa;
-            border-color: #2575fc;
+        .drop-area:hover, .drop-area.dragover {
+            border-color: var(--primary-color);
+            background-color: rgba(67, 97, 238, 0.05);
         }
 
         .drop-area i {
-            font-size: 3rem;
-            color: #6a11cb;
-            margin-bottom: 15px;
+            font-size: 48px;
+            color: #ccc;
+            margin-bottom: 10px;
+            display: block;
         }
 
         .file-input {
             display: none;
         }
 
-        .upload-btn {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
             color: white;
-            padding: 12px 25px;
             border: none;
-            border-radius: 50px;
+            border-radius: var(--border-radius);
             cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.3s;
-            margin-top: 15px;
+            transition: var(--transition);
+            font-weight: 500;
+            text-align: center;
         }
 
-        .upload-btn:hover {
-            opacity: 0.9;
+        .btn:hover {
+            background-color: var(--secondary-color);
             transform: translateY(-2px);
         }
 
-        .setting-group {
-            margin-bottom: 20px;
-        }
-
-        .setting-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        .setting-group select, 
-        .setting-group input {
+        .btn-convert {
+            background-color: var(--accent-color);
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .range-value {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 5px;
-        }
-
-        .preview-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
+            padding: 15px;
+            font-size: 18px;
             margin-top: 20px;
         }
 
-        .preview-item {
-            width: 150px;
-            height: 200px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        .btn-convert:hover {
+            background-color: #c1121f;
         }
 
-        .preview-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
         }
 
-        .remove-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background: rgba(255, 0, 0, 0.7);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 25px;
-            height: 25px;
-            cursor: pointer;
-            font-size: 0.8rem;
+        .option-group {
+            margin-bottom: 20px;
         }
 
-        .action-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .action-btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .convert-btn {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            color: white;
-        }
-
-        .reset-btn {
-            background: #e74c3c;
-            color: white;
-        }
-
-        .action-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        .ad-container {
-            width: 100%;
-            margin: 30px 0;
-            text-align: center;
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px dashed #ccc;
-        }
-
-        .ad-label {
+        .option-label {
             display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .option-select, .option-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+        }
+
+        .range-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .range-value {
+            min-width: 40px;
             text-align: center;
-            color: #7f8c8d;
-            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .preview-container {
+            margin-top: 20px;
+        }
+
+        .preview-title {
             margin-bottom: 10px;
+        }
+
+        .preview-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .preview-image {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .preview-image img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .remove-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: rgba(255,255,255,0.8);
+            border: none;
+            border-radius: 0 0 0 4px;
+            cursor: pointer;
+            padding: 2px 5px;
+            font-size: 14px;
         }
 
         footer {
             text-align: center;
-            padding: 30px 0;
             margin-top: 50px;
-            color: #7f8c8d;
-            border-top: 1px solid #eee;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
         }
 
-        @media (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-            }
-            
-            header h1 {
-                font-size: 2rem;
-            }
-            
-            .preview-item {
-                width: 120px;
-                height: 160px;
-            }
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            background: var(--success-color);
+            color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transform: translateX(100%);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
         }
 
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .action-buttons {
-                flex-direction: column;
-            }
-            
-            .preview-item {
-                width: 100px;
-                height: 140px;
-            }
+        .notification.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .feature-list {
+            margin: 30px auto;
+            max-width: 800px;
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .feature-list h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .feature i {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: block;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Image to PDF Converter</h1>
+        <p class="description">Convert your images to PDF documents with our free online tool. Support for multiple images, customizable page settings, and more.</p>
+    </header>
+
     <div class="container">
-        <header>
-            <h1>Image to PDF Converter</h1>
-            <p>Convert your images to PDF documents with customizable page settings. Free, fast, and no registration required!</p>
-        </header>
+        <div class="upload-section">
+            <h2 class="section-title">Upload Images</h2>
+            <div class="drop-area" id="dropArea">
+                <i>📁</i>
+                <p>Drag & drop images here or click to browse</p>
+                <p class="small">(Supports JPG, PNG, GIF, WEBP)</p>
+                <input type="file" id="fileInput" class="file-input" accept="image/*" multiple>
+            </div>
+            <button class="btn" id="browseBtn">Browse Files</button>
 
-        <div class="ad-container">
-            <span class="ad-label">Advertisement</span>
-            <!-- Google AdSense Ad Unit -->
-            <div id="adsense-ad" style="height: 90px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
-                <p>AdSense Ad Unit (ID: YOUR-AD-UNIT-ID)</p>
+            <div class="preview-container">
+                <h3 class="preview-title">Selected Images</h3>
+                <div class="preview-images" id="imagePreviews"></div>
             </div>
         </div>
 
-        <div class="main-content">
-            <div class="upload-section">
-                <h2>Upload Images</h2>
-                <div class="drop-area" id="dropArea">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <p>Drag & Drop your images here</p>
-                    <p>or</p>
-                    <button class="upload-btn">Select Images</button>
-                    <input type="file" class="file-input" id="fileInput" accept="image/*" multiple>
-                </div>
-                <p>Supported formats: JPG, PNG, GIF, BMP</p>
+        <div class="options-section">
+            <h2 class="section-title">PDF Options</h2>
+            
+            <div class="option-group">
+                <label class="option-label">Page Size</label>
+                <select class="option-select" id="pageSize">
+                    <option value="a4">A4</option>
+                    <option value="letter">Letter</option>
+                    <option value="legal">Legal</option>
+                    <option value="a3">A3</option>
+                    <option value="a5">A5</option>
+                </select>
             </div>
 
-            <div class="settings-section">
-                <h2>PDF Settings</h2>
-                <div class="setting-group">
-                    <label for="pageSize">Page Size</label>
-                    <select id="pageSize">
-                        <option value="a4">A4</option>
-                        <option value="letter">Letter</option>
-                        <option value="legal">Legal</option>
-                    </select>
-                </div>
-                
-                <div class="setting-group">
-                    <label for="orientation">Orientation</label>
-                    <select id="orientation">
-                        <option value="portrait">Portrait</option>
-                        <option value="landscape">Landscape</option>
-                    </select>
-                </div>
-                
-                <div class="setting-group">
-                    <label for="margin">Margin (mm)</label>
-                    <input type="range" id="margin" min="0" max="50" value="10">
-                    <div class="range-value">
-                        <span>0</span>
-                        <span id="marginValue">10 mm</span>
-                        <span>50</span>
-                    </div>
-                </div>
-                
-                <div class="setting-group">
-                    <label for="quality">Image Quality</label>
-                    <input type="range" id="quality" min="50" max="100" value="90">
-                    <div class="range-value">
-                        <span>Low</span>
-                        <span id="qualityValue">90%</span>
-                        <span>High</span>
-                    </div>
-                </div>
-                
-                <div class="setting-group">
-                    <label for="layout">Image Layout</label>
-                    <select id="layout">
-                        <option value="single">One image per page</option>
-                        <option value="continuous">Continuous flow</option>
-                        <option value="grid">Grid layout (2x2)</option>
-                    </select>
+            <div class="option-group">
+                <label class="option-label">Orientation</label>
+                <select class="option-select" id="orientation">
+                    <option value="portrait">Portrait</option>
+                    <option value="landscape">Landscape</option>
+                </select>
+            </div>
+
+            <div class="option-group">
+                <label class="option-label">Page Layout</label>
+                <select class="option-select" id="pageLayout">
+                    <option value="single">Single image per page</option>
+                    <option value="continuous">Continuous flow</option>
+                    <option value="grid">Grid layout (2x2)</option>
+                </select>
+            </div>
+
+            <div class="option-group">
+                <label class="option-label">Margin Size (mm)</label>
+                <div class="range-container">
+                    <input type="range" class="option-input" id="marginSize" min="0" max="50" value="10">
+                    <span class="range-value" id="marginValue">10</span>
                 </div>
             </div>
 
-            <div class="preview-section">
-                <h2>Image Preview</h2>
-                <p>Uploaded images will appear here. You can reorder by dragging.</p>
-                
-                <div class="preview-container" id="previewContainer">
-                    <!-- Images will be previewed here -->
-                    <div class="preview-item">
-                        <img src="https://placehold.co/150x200/6a11cb/white?text=Example+1" alt="Sample image">
-                        <button class="remove-btn">×</button>
-                    </div>
-                    <div class="preview-item">
-                        <img src="https://placehold.co/150x200/2575fc/white?text=Example+2" alt="Sample image">
-                        <button class="remove-btn">×</button>
-                    </div>
+            <div class="option-group">
+                <label class="option-label">Image Quality</label>
+                <div class="range-container">
+                    <input type="range" class="option-input" id="imageQuality" min="50" max="100" value="90">
+                    <span class="range-value" id="qualityValue">90</span>
                 </div>
-                
-                <div class="action-buttons">
-                    <button class="action-btn convert-btn">Convert to PDF</button>
-                    <button class="action-btn reset-btn">Reset All</button>
-                </div>
+            </div>
+
+            <div class="option-group">
+                <label class="option-label">Add Border to Images</label>
+                <select class="option-select" id="imageBorder">
+                    <option value="none">None</option>
+                    <option value="thin">Thin Border</option>
+                    <option value="thick">Thick Border</option>
+                </select>
+            </div>
+
+            <div class="option-group">
+                <label class="option-label">PDF Filename</label>
+                <input type="text" class="option-input" id="filename" placeholder="output.pdf">
+            </div>
+
+            <button class="btn btn-convert" id="convertBtn">Convert to PDF</button>
+
+            <div class="loading" id="loadingIndicator">
+                <div class="loading-spinner"></div>
+                <p>Processing your PDF...</p>
             </div>
         </div>
+    </div>
 
-        <div class="ad-container">
-            <span class="ad-label">Advertisement</span>
-            <!-- Google AdSense Ad Unit -->
-            <div id="adsense-ad-2" style="height: 90px; background: #f0f0f0; display: flex; align-items: center; justify-content: center;">
-                <p>AdSense Ad Unit (ID: YOUR-AD-UNIT-ID)</p>
+    <div class="feature-list">
+        <h2>Advanced Features</h2>
+        <div class="features">
+            <div class="feature">
+                <i>🖼️</i>
+                <h3>Multiple Images</h3>
+                <p>Combine multiple images into a single PDF document</p>
+            </div>
+            <div class="feature">
+                <i>📐</i>
+                <h3>Customizable Layout</h3>
+                <p>Choose from various page layouts and orientations</p>
+            </div>
+            <div class="feature">
+                <i>🎨</i>
+                <h3>Border Options</h3>
+                <p>Add borders to your images for a professional look</p>
+            </div>
+            <div class="feature">
+                <i>💾</i>
+                <h3>Quality Control</h3>
+                <p>Adjust the image quality to balance size and clarity</p>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>© 2023 ImageToPDF Converter. All rights reserved.</p>
-        <p>This tool is built with HTML, CSS, and JavaScript. Your files are processed entirely in your browser and are not uploaded to any server.</p>
+        <p>© 2023 Image to PDF Converter. All rights reserved.</p>
+        <p>This tool is built with HTML, CSS, and JavaScript. Your files are processed entirely in your browser - they are never uploaded to any server.</p>
     </footer>
 
+    <div class="notification" id="notification">PDF created successfully!</div>
+
+    <!-- Include jsPDF library from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
-        // DOM Elements
-        const dropArea = document.getElementById('dropArea');
-        const fileInput = document.getElementById('fileInput');
-        const previewContainer = document.getElementById('previewContainer');
-        const marginSlider = document.getElementById('margin');
-        const marginValue = document.getElementById('marginValue');
-        const qualitySlider = document.getElementById('quality');
-        const qualityValue = document.getElementById('qualityValue');
-        const convertBtn = document.querySelector('.convert-btn');
-        const resetBtn = document.querySelector('.reset-btn');
-
-        // Event Listeners
-        dropArea.addEventListener('click', () => fileInput.click());
-        
-        fileInput.addEventListener('change', handleFileSelect);
-        
-        dropArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            dropArea.style.borderColor = '#2575fc';
-            dropArea.style.backgroundColor = '#f0f4ff';
-        });
-        
-        dropArea.addEventListener('dragleave', () => {
-            dropArea.style.borderColor = '#6a11cb';
-            dropArea.style.backgroundColor = '';
-        });
-        
-        dropArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            dropArea.style.borderColor = '#6a11cb';
-            dropArea.style.backgroundColor = '';
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize variables
+            const fileInput = document.getElementById('fileInput');
+            const dropArea = document.getElementById('dropArea');
+            const browseBtn = document.getElementById('browseBtn');
+            const convertBtn = document.getElementById('convertBtn');
+            const imagePreviews = document.getElementById('imagePreviews');
+            const notification = document.getElementById('notification');
+            const loadingIndicator = document.getElementById('loadingIndicator');
             
-            if (e.dataTransfer.files.length) {
-                fileInput.files = e.dataTransfer.files;
-                handleFileSelect(e);
-            }
-        });
-        
-        marginSlider.addEventListener('input', () => {
-            marginValue.textContent = `${marginSlider.value} mm`;
-        });
-        
-        qualitySlider.addEventListener('input', () => {
-            qualityValue.textContent = `${qualitySlider.value}%`;
-        });
-        
-        convertBtn.addEventListener('click', convertToPdf);
-        resetBtn.addEventListener('click', resetAll);
-
-        // Sample remove button functionality
-        document.querySelectorAll('.remove-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.target.parentElement.remove();
+            // Range value displays
+            const marginSize = document.getElementById('marginSize');
+            const marginValue = document.getElementById('marginValue');
+            const imageQuality = document.getElementById('imageQuality');
+            const qualityValue = document.getElementById('qualityValue');
+            
+            // Store uploaded images
+            let uploadedImages = [];
+            
+            // Set up event listeners
+            browseBtn.addEventListener('click', () => fileInput.click());
+            fileInput.addEventListener('change', handleFileSelect);
+            dropArea.addEventListener('dragover', handleDragOver);
+            dropArea.addEventListener('dragleave', handleDragLeave);
+            dropArea.addEventListener('drop', handleDrop);
+            convertBtn.addEventListener('click', convertToPdf);
+            
+            // Range input events
+            marginSize.addEventListener('input', () => {
+                marginValue.textContent = marginSize.value;
             });
-        });
-
-        // Functions
-        function handleFileSelect(e) {
-            const files = e.target.files;
             
-            if (!files.length) return;
+            imageQuality.addEventListener('input', () => {
+                qualityValue.textContent = imageQuality.value;
+            });
             
-            for (const file of files) {
-                if (!file.type.match('image.*')) continue;
+            // Handle file selection
+            function handleFileSelect(e) {
+                const files = e.target.files;
+                processFiles(files);
+            }
+            
+            // Handle drag over
+            function handleDragOver(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropArea.classList.add('dragover');
+            }
+            
+            // Handle drag leave
+            function handleDragLeave(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropArea.classList.remove('dragover');
+            }
+            
+            // Handle drop
+            function handleDrop(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropArea.classList.remove('dragover');
                 
-                const reader = new FileReader();
+                const files = e.dataTransfer.files;
+                processFiles(files);
+            }
+            
+            // Process selected files
+            function processFiles(files) {
+                if (files.length === 0) return;
                 
-                reader.onload = function(e) {
-                    const previewItem = document.createElement('div');
-                    previewItem.className = 'preview-item';
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    
+                    // Check if file is an image
+                    if (!file.type.match('image.*')) {
+                        showNotification('Please select only image files', 'error');
+                        continue;
+                    }
+                    
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                        const imageData = {
+                            name: file.name,
+                            data: e.target.result
+                        };
+                        
+                        uploadedImages.push(imageData);
+                        updateImagePreviews();
+                    };
+                    
+                    reader.readAsDataURL(file);
+                }
+            }
+            
+            // Update image previews
+            function updateImagePreviews() {
+                imagePreviews.innerHTML = '';
+                
+                uploadedImages.forEach((image, index) => {
+                    const previewDiv = document.createElement('div');
+                    previewDiv.className = 'preview-image';
                     
                     const img = document.createElement('img');
-                    img.src = e.target.result;
-                    img.alt = file.name;
+                    img.src = image.data;
+                    img.alt = image.name;
                     
                     const removeBtn = document.createElement('button');
-                    removeBtn.className = 'remove-btn';
-                    removeBtn.textContent = '×';
-                    removeBtn.addEventListener('click', () => previewItem.remove());
+                    removeBtn.className = 'remove-image';
+                    removeBtn.innerHTML = '×';
+                    removeBtn.title = 'Remove image';
+                    removeBtn.addEventListener('click', () => removeImage(index));
                     
-                    previewItem.appendChild(img);
-                    previewItem.appendChild(removeBtn);
-                    previewContainer.appendChild(previewItem);
-                };
-                
-                reader.readAsDataURL(file);
-            }
-        }
-        
-        function convertToPdf() {
-            // In a real implementation, this would use a PDF generation library
-            alert('PDF conversion would happen here. In a real implementation, this would generate and download a PDF file with your selected settings.');
-            
-            // Simulate download
-            const a = document.createElement('a');
-            a.href = '#';
-            a.download = 'converted.pdf';
-            a.click();
-        }
-        
-        function resetAll() {
-            fileInput.value = '';
-            previewContainer.innerHTML = '';
-            marginSlider.value = 10;
-            marginValue.textContent = '10 mm';
-            qualitySlider.value = 90;
-            qualityValue.textContent = '90%';
-            
-            // Show sample images again
-            previewContainer.innerHTML = `
-                <div class="preview-item">
-                    <img src="https://placehold.co/150x200/6a11cb/white?text=Example+1" alt="Sample image">
-                    <button class="remove-btn">×</button>
-                </div>
-                <div class="preview-item">
-                    <img src="https://placehold.co/150x200/2575fc/white?text=Example+2" alt="Sample image">
-                    <button class="remove-btn">×</button>
-                </div>
-            `;
-            
-            // Reattach event listeners to new remove buttons
-            document.querySelectorAll('.remove-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.target.parentElement.remove();
+                    previewDiv.appendChild(img);
+                    previewDiv.appendChild(removeBtn);
+                    imagePreviews.appendChild(previewDiv);
                 });
-            });
-        }
+                
+                // Enable/disable convert button based on whether we have images
+                convertBtn.disabled = uploadedImages.length === 0;
+            }
+            
+            // Remove image from preview
+            function removeImage(index) {
+                uploadedImages.splice(index, 1);
+                updateImagePreviews();
+            }
+            
+            // Convert images to PDF
+            function convertToPdf() {
+                if (uploadedImages.length === 0) {
+                    showNotification('Please select at least one image', 'error');
+                    return;
+                }
+                
+                // Show loading indicator
+                loadingIndicator.style.display = 'block';
+                
+                // Use setTimeout to allow the UI to update before starting the conversion
+                setTimeout(() => {
+                    try {
+                        // Get options
+                        const pageSize = document.getElementById('pageSize').value;
+                        const orientation = document.getElementById('orientation').value;
+                        const pageLayout = document.getElementById('pageLayout').value;
+                        const margin = parseInt(document.getElementById('marginSize').value);
+                        const quality = parseInt(document.getElementById('imageQuality').value) / 100;
+                        const border = document.getElementById('imageBorder').value;
+                        const filename = document.getElementById('filename').value || 'output.pdf';
+                        
+                        // Create new PDF document
+                        const { jsPDF } = window.jspdf;
+                        const doc = new jsPDF({
+                            orientation: orientation,
+                            unit: 'mm',
+                            format: pageSize
+                        });
+                        
+                        // Process each image
+                        let promises = [];
+                        
+                        uploadedImages.forEach((imageData) => {
+                            promises.push(new Promise((resolve) => {
+                                const img = new Image();
+                                img.src = imageData.data;
+                                
+                                img.onload = () => resolve(img);
+                            }));
+                        });
+                        
+                        // When all images are loaded
+                        Promise.all(promises).then((images) => {
+                            const pageWidth = doc.internal.pageSize.getWidth();
+                            const pageHeight = doc.internal.pageSize.getHeight();
+                            const contentWidth = pageWidth - (margin * 2);
+                            const contentHeight = pageHeight - (margin * 2);
+                            
+                            if (pageLayout === 'single') {
+                                // Single image per page
+                                images.forEach((img, index) => {
+                                    if (index > 0) doc.addPage();
+                                    
+                                    const imgWidth = img.width;
+                                    const imgHeight = img.height;
+                                    
+                                    // Calculate dimensions to fit within page margins
+                                    const ratio = Math.min(
+                                        contentWidth / imgWidth,
+                                        contentHeight / imgHeight
+                                    );
+                                    
+                                    const width = imgWidth * ratio;
+                                    const height = imgHeight * ratio;
+                                    
+                                    // Center image on page
+                                    const x = margin + (contentWidth - width) / 2;
+                                    const y = margin + (contentHeight - height) / 2;
+                                    
+                                    // Add border if selected
+                                    if (border !== 'none') {
+                                        const borderWidth = border === 'thin' ? 0.5 : 2;
+                                        doc.setDrawColor(0);
+                                        doc.setLineWidth(borderWidth);
+                                        doc.rect(
+                                            x - borderWidth, 
+                                            y - borderWidth, 
+                                            width + (borderWidth * 2), 
+                                            height + (borderWidth * 2)
+                                        );
+                                    }
+                                    
+                                    doc.addImage(
+                                        img.src, 
+                                        'JPEG', 
+                                        x, y, width, height, 
+                                        null, 'FAST'
+                                    );
+                                });
+                            } else if (pageLayout === 'continuous') {
+                                // Continuous flow of images
+                                let y = margin;
+                                
+                                images.forEach((img, index) => {
+                                    if (index > 0 && y === margin) {
+                                        doc.addPage();
+                                    }
+                                    
+                                    const imgWidth = img.width;
+                                    const imgHeight = img.height;
+                                    
+                                    // Calculate dimensions to fit page width
+                                    const width = contentWidth;
+                                    const height = (imgHeight * contentWidth) / imgWidth;
+                                    
+                                    // Check if we need a new page
+                                    if (y + height > pageHeight - margin && y > margin) {
+                                        doc.addPage();
+                                        y = margin;
+                                    }
+                                    
+                                    // Add border if selected
+                                    if (border !== 'none') {
+                                        const borderWidth = border === 'thin' ? 0.5 : 2;
+                                        doc.setDrawColor(0);
+                                        doc.setLineWidth(borderWidth);
+                                        doc.rect(
+                                            margin - borderWidth, 
+                                            y - borderWidth, 
+                                            width + (borderWidth * 2), 
+                                            height + (borderWidth * 2)
+                                        );
+                                    }
+                                    
+                                    doc.addImage(
+                                        img.src, 
+                                        'JPEG', 
+                                        margin, y, width, height, 
+                                        null, 'FAST'
+                                    );
+                                    
+                                    y += height + 5; // Add small gap between images
+                                });
+                            } else if (pageLayout === 'grid') {
+                                // Grid layout (2x2)
+                                let row = 0;
+                                let col = 0;
+                                
+                                images.forEach((img, index) => {
+                                    if (index > 0 && row === 0 && col === 0) {
+                                        doc.addPage();
+                                    }
+                                    
+                                    const imgWidth = img.width;
+                                    const imgHeight = img.height;
+                                    
+                                    // Calculate dimensions for grid cell
+                                    const cellWidth = contentWidth / 2;
+                                    const cellHeight = contentHeight / 2;
+                                    
+                                    const ratio = Math.min(
+                                        cellWidth / imgWidth,
+                                        cellHeight / imgHeight
+                                    );
+                                    
+                                    const width = imgWidth * ratio;
+                                    const height = imgHeight * ratio;
+                                    
+                                    // Center image in grid cell
+                                    const x = margin + (col * cellWidth) + (cellWidth - width) / 2;
+                                    const y = margin + (row * cellHeight) + (cellHeight - height) / 2;
+                                    
+                                    // Add border if selected
+                                    if (border !== 'none') {
+                                        const borderWidth = border === 'thin' ? 0.5 : 2;
+                                        doc.setDrawColor(0);
+                                        doc.setLineWidth(borderWidth);
+                                        doc.rect(
+                                            x - borderWidth, 
+                                            y - borderWidth, 
+                                            width + (borderWidth * 2), 
+                                            height + (borderWidth * 2)
+                                        );
+                                    }
+                                    
+                                    doc.addImage(
+                                        img.src, 
+                                        'JPEG', 
+                                        x, y, width, height, 
+                                        null, 'FAST'
+                                    );
+                                    
+                                    // Move to next grid position
+                                    col++;
+                                    if (col > 1) {
+                                        col = 0;
+                                        row++;
+                                        if (row > 1) {
+                                            row = 0;
+                                        }
+                                    }
+                                });
+                            }
+                            
+                            // Save the PDF
+                            doc.save(filename);
+                            
+                            // Hide loading indicator
+                            loadingIndicator.style.display = 'none';
+                            
+                            // Show success notification
+                            showNotification('PDF created successfully!');
+                        });
+                    } catch (error) {
+                        console.error('Error creating PDF:', error);
+                        loadingIndicator.style.display = 'none';
+                        showNotification('Error creating PDF: ' + error.message, 'error');
+                    }
+                }, 100);
+            }
+            
+            // Show notification
+            function showNotification(message, type = 'success') {
+                notification.textContent = message;
+                notification.style.backgroundColor = type === 'error' ? '#e63946' : '#4cc9f0';
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+        });
     </script>
 </body>
-
 </html>
