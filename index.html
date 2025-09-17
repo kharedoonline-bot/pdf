@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7238167963236995"
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7238167963236995"
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF4US - Free Online PDF Tools for All Your Document Needs</title>
-    <meta name="description" content="Free online PDF tools to merge, split, compress, convert and edit PDF files. Easy to use with no installation needed.">
-    <meta name="keywords" content="PDF tools, merge PDF, split PDF, edit PDF, compress PDF, PDF to Word, Word to PDF, Image to PDF">
+    <title>PDF4US - Your All-in-One PDF Solution</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
@@ -19,13 +17,12 @@
         
         body {
             font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            line-height: 1.6;
         }
         
         .container {
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
@@ -35,7 +32,7 @@
         header {
             background: linear-gradient(to right, #4361ee, #3a0ca3);
             color: white;
-            padding: 15px 0;
+            padding: 20px 0;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
@@ -61,6 +58,7 @@
             font-weight: 800;
             font-size: 28px;
             color: white;
+            text-decoration: none;
         }
         
         nav ul {
@@ -73,7 +71,7 @@
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: color 0.3s;
         }
         
         nav a:hover {
@@ -87,7 +85,7 @@
             background: white;
             border-radius: 0 0 15px 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         
         .hero h1 {
@@ -98,9 +96,9 @@
         
         .hero p {
             font-size: 1.2rem;
-            color: #555;
             max-width: 800px;
             margin: 0 auto 30px;
+            color: #555;
         }
         
         .cta-button {
@@ -112,7 +110,7 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: all 0.3s ease;
+            transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
         }
         
@@ -123,7 +121,7 @@
         
         /* Tools Grid */
         .tools-section {
-            padding: 50px 0;
+            padding: 40px 0;
         }
         
         .section-title {
@@ -136,46 +134,59 @@
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
         
         .tool-card {
             background: white;
             border-radius: 12px;
-            padding: 25px 20px;
+            padding: 25px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
         }
         
         .tool-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
         }
         
         .tool-icon {
             font-size: 40px;
             margin-bottom: 15px;
+            display: block;
         }
         
         .tool-card h3 {
-            font-size: 1.2rem;
             margin-bottom: 10px;
-            color: #333;
+            color: #3a0ca3;
         }
         
         .tool-card p {
             color: #666;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+        }
+        
+        /* Color variations for tool cards */
+        .tool-card:nth-child(3n+1) {
+            border-top: 4px solid #4361ee;
+        }
+        
+        .tool-card:nth-child(3n+2) {
+            border-top: 4px solid #f72585;
+        }
+        
+        .tool-card:nth-child(3n+3) {
+            border-top: 4px solid #4cc9f0;
         }
         
         /* Features Section */
         .features {
+            background: white;
             padding: 60px 0;
-            background: linear-gradient(to right, #4361ee, #3a0ca3);
-            color: white;
             border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             margin: 40px 0;
         }
         
@@ -188,26 +199,23 @@
         
         .feature {
             text-align: center;
-            padding: 30px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
+            padding: 0 20px;
         }
         
-        .feature i {
-            font-size: 45px;
+        .feature-icon {
+            font-size: 50px;
+            color: #4361ee;
             margin-bottom: 20px;
-            color: #ff9e00;
         }
         
         .feature h3 {
-            font-size: 1.4rem;
             margin-bottom: 15px;
+            color: #3a0ca3;
         }
         
         /* Footer */
         footer {
-            background: #2b2d42;
+            background: linear-gradient(to right, #3a0ca3, #7209b7);
             color: white;
             padding: 50px 0 20px;
             margin-top: 60px;
@@ -216,14 +224,25 @@
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
+            gap: 40px;
+            margin-bottom: 30px;
         }
         
         .footer-column h3 {
             font-size: 1.3rem;
             margin-bottom: 20px;
-            color: #ff9e00;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: #ff9e00;
         }
         
         .footer-column ul {
@@ -231,7 +250,7 @@
         }
         
         .footer-column ul li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         
         .footer-column a {
@@ -259,11 +278,12 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: white;
-            transition: all 0.3s ease;
+            font-size: 18px;
+            transition: background 0.3s, transform 0.3s;
         }
         
         .social-icons a:hover {
-            background: #4361ee;
+            background: #ff9e00;
             transform: translateY(-3px);
         }
         
@@ -272,7 +292,7 @@
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
-            color: #aaa;
+            color: #ccc;
         }
         
         /* Responsive Design */
@@ -292,12 +312,20 @@
                 font-size: 2.2rem;
             }
             
+            .hero p {
+                font-size: 1rem;
+            }
+            
             .tools-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
         }
         
         @media (max-width: 480px) {
+            .logo-text {
+                font-size: 24px;
+            }
+            
             .hero h1 {
                 font-size: 1.8rem;
             }
@@ -306,27 +334,30 @@
                 font-size: 1.8rem;
             }
             
-            .tools-grid {
-                grid-template-columns: 1fr;
+            .tool-card {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header Section -->
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="logo-text">PDF4US</div>
+                    <div class="logo-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <a href="#" class="logo-text">PDF4US</a>
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#tools">Tools</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Tools</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -337,183 +368,161 @@
     <section class="hero">
         <div class="container">
             <h1>All PDF Tools You Need in One Place</h1>
-            <p>Free online PDF tools to merge, split, compress, convert and edit PDF files. No installation needed. Process your documents quickly and easily.</p>
-            <a href="#tools" class="cta-button">Explore Tools</a>
+            <p>Edit, convert, merge, split, compress, and do more with your PDF files. Free online PDF tools to make your work easier and faster.</p>
+            <a href="#" class="cta-button">Get Started Now</a>
         </div>
     </section>
 
-    <!-- Tools Section -->
-    <section class="tools-section" id="tools">
+    <!-- Tools Grid Section -->
+    <section class="tools-section">
         <div class="container">
             <h2 class="section-title">Our PDF Tools</h2>
             <div class="tools-grid">
                 <!-- Tool Cards -->
-                <div class="tool-card" style="border-top: 5px solid #4361ee;">
-                    <div class="tool-icon" style="color: #4361ee;">
-                        <i class="fas fa-object-group"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-object-group tool-icon" style="color: #4361ee;"></i>
                     <h3>Merge PDF</h3>
                     <p>Combine multiple PDFs into one document</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #7209b7;">
-                    <div class="tool-icon" style="color: #7209b7;">
-                        <i class="fas fa-cut"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-cut tool-icon" style="color: #f72585;"></i>
                     <h3>Split PDF</h3>
                     <p>Separate one PDF into multiple files</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #f72585;">
-                    <div class="tool-icon" style="color: #f72585;">
-                        <i class="fas fa-edit"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-edit tool-icon" style="color: #4cc9f0;"></i>
                     <h3>Edit PDF</h3>
-                    <p>Modify your PDF documents easily</p>
+                    <p>Modify text and images in your PDF</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #4cc9f0;">
-                    <div class="tool-icon" style="color: #4cc9f0;">
-                        <i class="fas fa-compress-arrows-alt"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-compress-arrows-alt tool-icon" style="color: #7209b7;"></i>
                     <h3>Compress PDF</h3>
                     <p>Reduce file size without losing quality</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #ff9e00;">
-                    <div class="tool-icon" style="color: #ff9e00;">
-                        <i class="fas fa-file-word"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-file-word tool-icon" style="color: #4361ee;"></i>
                     <h3>PDF to Word</h3>
                     <p>Convert PDF to editable Word documents</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #2a9d8f;">
-                    <div class="tool-icon" style="color: #2a9d8f;">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-file-alt tool-icon" style="color: #f72585;"></i>
                     <h3>Word to PDF</h3>
                     <p>Convert Word documents to PDF format</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #e63946;">
-                    <div class="tool-icon" style="color: #e63946;">
-                        <i class="fas fa-file-image"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-image tool-icon" style="color: #4cc9f0;"></i>
                     <h3>Image to PDF</h3>
                     <p>Convert images to PDF documents</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #588157;">
-                    <div class="tool-icon" style="color: #588157;">
-                        <i class="fas fa-image"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-file-image tool-icon" style="color: #7209b7;"></i>
                     <h3>PDF to Image</h3>
                     <p>Convert PDF pages to image files</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #3a0ca3;">
-                    <div class="tool-icon" style="color: #3a0ca3;">
-                        <i class="fas fa-file-excel"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-file-excel tool-icon" style="color: #4361ee;"></i>
                     <h3>Excel to PDF</h3>
                     <p>Convert Excel spreadsheets to PDF</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #f77f00;">
-                    <div class="tool-icon" style="color: #f77f00;">
-                        <i class="fas fa-table"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-table tool-icon" style="color: #f72585;"></i>
                     <h3>PDF to Excel</h3>
                     <p>Convert PDF tables to Excel format</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #9d4edd;">
-                    <div class="tool-icon" style="color: #9d4edd;">
-                        <i class="fas fa-file-powerpoint"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-file-powerpoint tool-icon" style="color: #4cc9f0;"></i>
                     <h3>PowerPoint to PDF</h3>
                     <p>Convert presentations to PDF</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #ff5400;">
-                    <div class="tool-icon" style="color: #ff5400;">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-desktop tool-icon" style="color: #7209b7;"></i>
                     <h3>PDF to PowerPoint</h3>
                     <p>Convert PDF to editable PowerPoint</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #0077b6;">
-                    <div class="tool-icon" style="color: #0077b6;">
-                        <i class="fas fa-redo"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-sync tool-icon" style="color: #4361ee;"></i>
                     <h3>Rotate PDF</h3>
                     <p>Rotate PDF pages to correct orientation</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #ff0054;">
-                    <div class="tool-icon" style="color: #ff0054;">
-                        <i class="fab fa-html5"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-code tool-icon" style="color: #f72585;"></i>
                     <h3>HTML to PDF</h3>
                     <p>Convert web pages to PDF documents</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #38b000;">
-                    <div class="tool-icon" style="color: #38b000;">
-                        <i class="fas fa-lock"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-lock tool-icon" style="color: #4cc9f0;"></i>
                     <h3>Protect PDF</h3>
-                    <p>Add password protection to your PDFs</p>
+                    <p>Add password to secure your PDF</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #7b2cbf;">
-                    <div class="tool-icon" style="color: #7b2cbf;">
-                        <i class="fas fa-signature"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-signature tool-icon" style="color: #7209b7;"></i>
                     <h3>Add Sign to PDF</h3>
-                    <p>Electronically sign your PDF documents</p>
+                    <p>Add electronic signature to documents</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #ff9500;">
-                    <div class="tool-icon" style="color: #ff9500;">
-                        <i class="fas fa-tools"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-tools tool-icon" style="color: #4361ee;"></i>
                     <h3>Repair PDF</h3>
                     <p>Fix corrupted or damaged PDF files</p>
                 </div>
                 
-                <div class="tool-card" style="border-top: 5px solid #00b4d8;">
-                    <div class="tool-icon" style="color: #00b4d8;">
-                        <i class="fas fa-tint"></i>
-                    </div>
+                <div class="tool-card">
+                    <i class="fas fa-tint tool-icon" style="color: #f72585;"></i>
                     <h3>Watermark PDF</h3>
-                    <p>Add text or image watermarks to PDFs</p>
+                    <p>Add text or image watermark to PDF</p>
+                </div>
+                
+                <div class="tool-card">
+                    <i class="fas fa-list-ol tool-icon" style="color: #4cc9f0;"></i>
+                    <h3>Page Numbering</h3>
+                    <p>Add page numbers to your PDF document</p>
+                </div>
+                
+                <div class="tool-card">
+                    <i class="fas fa-crop-alt tool-icon" style="color: #7209b7;"></i>
+                    <h3>Crop PDF</h3>
+                    <p>Adjust margins and crop PDF pages</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features" id="features">
+    <section class="features">
         <div class="container">
             <h2 class="section-title">Why Choose PDF4US?</h2>
             <div class="features-grid">
                 <div class="feature">
-                    <i class="fas fa-lock"></i>
+                    <i class="fas fa-lock feature-icon"></i>
                     <h3>100% Secure</h3>
-                    <p>Your files are encrypted and automatically deleted after processing</p>
+                    <p>Your files are encrypted and automatically deleted after processing. No one has access to your files.</p>
                 </div>
+                
                 <div class="feature">
-                    <i class="fas fa-bolt"></i>
+                    <i class="fas fa-bolt feature-icon"></i>
                     <h3>Fast Processing</h3>
-                    <p>Advanced algorithms for quick PDF operations</p>
+                    <p>Our powerful servers process your files quickly, saving you time and effort.</p>
                 </div>
+                
                 <div class="feature">
-                    <i class="fas fa-cloud"></i>
+                    <i class="fas fa-cloud feature-icon"></i>
                     <h3>Cloud-Based</h3>
-                    <p>No downloads or installations required</p>
+                    <p>No downloads or installations needed. Access our tools from any device with a browser.</p>
                 </div>
             </div>
         </div>
@@ -525,7 +534,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>PDF4US</h3>
-                    <p>Your all-in-one solution for PDF editing and conversion needs. Free, fast, and secure.</p>
+                    <p>Your all-in-one solution for PDF tools. Edit, convert, and manipulate PDF files with ease.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -533,6 +542,7 @@
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
+                
                 <div class="footer-column">
                     <h3>Tools</h3>
                     <ul>
@@ -543,16 +553,28 @@
                         <li><a href="#">All Tools</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-column">
                     <h3>Company</h3>
                     <ul>
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Pricing</a></li>
                         <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
+                
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
             </div>
+            
             <div class="copyright">
                 <p>&copy; 2023 PDF4US.com. All rights reserved.</p>
             </div>
@@ -561,29 +583,32 @@
 
     <script>
         // Simple JavaScript for tool card interaction
-        document.querySelectorAll('.tool-card').forEach(card => {
-            card.addEventListener('click', function() {
-                // In a real application, this would navigate to the tool page
-                const toolName = this.querySelector('h3').textContent;
-                alert(`You selected: ${toolName}. In a real application, this would navigate to the tool page.`);
+        document.addEventListener('DOMContentLoaded', function() {
+            const toolCards = document.querySelectorAll('.tool-card');
+            
+            toolCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // For demonstration purposes - would link to actual tool pages
+                    const toolName = this.querySelector('h3').textContent;
+                    alert(`You selected: ${toolName}\nThis would open the tool page in a real implementation.`);
+                });
             });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+            
+            // Animate tool cards on page load
+            setTimeout(() => {
+                toolCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = 1;
+                        card.style.transform = 'translateY(0)';
+                    }, 100 + index * 50);
+                });
+            }, 500);
+            
+            // Initialize tool card styles for animation
+            toolCards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             });
         });
     </script>
